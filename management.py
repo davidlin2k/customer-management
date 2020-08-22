@@ -30,24 +30,17 @@ track17 = 'https://t.17track.net/en#nums='
 fields = 'Names', 'Address', 'Tracking Number', 'Wechat Number', 'Note'
 
 class MyTable(Table):
-    """
-      Custom table class inherits from Table.
-      You can then override required methods
-     """
     def __init__(self, parent=None, **kwargs):
         Table.__init__(self, parent, **kwargs)
         return
     
 def make_table(frame, **kwds):
-    """make a sample table"""
     df = data
     pt = MyTable(frame, dataframe=df, **kwds )
     pt.show()
     return pt
 
 def test1():
-    """just make a table"""
-
     t = tk.Toplevel()
     fr = Frame(t)
     fr.pack(fill=tk.BOTH,expand=1)
